@@ -53,6 +53,7 @@ function createDivGrid(sizeX,sizeY){
         })
         
         pixel.addEventListener("mousedown", function (e) {
+            e.preventDefault();
             colorPixel(this);
         })
 
