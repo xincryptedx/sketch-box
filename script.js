@@ -36,6 +36,7 @@ function createDivGrid(sizeX,sizeY){
         for (y = 0; y < sizeY; y++){
             const pixelDiv = document.createElement("div");
             pixelDiv.classList.add("pixel");
+            // pixelDiv.style.backgroundColor = "rgb(" + randomNumber(255) +", " + randomNumber(255) + ", " + randomNumber(255) + ")";
             rowDiv.appendChild(pixelDiv);
         }
 
@@ -43,4 +44,8 @@ function createDivGrid(sizeX,sizeY){
     }
 
     return document.querySelector(".boxContainer");
+}
+
+function randomNumber(upperRange){
+    return Math.floor(Math.random() * upperRange);
 }
