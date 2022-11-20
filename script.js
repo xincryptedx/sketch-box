@@ -47,9 +47,21 @@ function createDivGrid(sizeX,sizeY){
         boxContainer.appendChild(rowDiv);
     }
 
+    const pixels = document.querySelectorAll(".pixel");
+    pixels.forEach((pixel) => {
+        pixel.addEventListener('mouseenter', function (e) {
+            if(e.buttons === 1) colorPixel(this);
+        })
+    })
+
     return document.querySelector(".boxContainer");
 }
 
 function randomNumber(upperRange){
     return Math.floor(Math.random() * upperRange);
+}
+
+function colorPixel(pixel){
+    console.log(pixel);
+    pixel.style.backgroundColor = "black";
 }
