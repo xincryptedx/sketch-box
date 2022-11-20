@@ -29,6 +29,10 @@ createDivGrid(defaultSize,defaultSize);
 
 //Functions
 function createDivGrid(sizeX,sizeY){
+    while (boxContainer.firstChild){
+        boxContainer.removeChild(boxContainer.firstChild);
+    }
+
     for (x = 0; x < sizeX; x++){
         const rowDiv = document.createElement("div");
         rowDiv.classList.add("row");
