@@ -50,7 +50,7 @@ drawEraseBtn.addEventListener("click", () =>{
 })
 
 eraseAllBtn.addEventListener("click", () =>{
-    console.log("EraseAll");
+    eraseAll();
 })
 
 changeSizeBtn.addEventListener("click", () =>{
@@ -112,4 +112,12 @@ function toggleDrawErase(){
         drawEraseBtn.textContent = "Erase";
     }
     else drawEraseBtn.textContent = "Draw";
+}
+
+function eraseAll(){
+    const pixels = document.querySelectorAll(".pixel");
+
+    pixels.forEach((pixel) => {pixel.style.backgroundColor = "white"});
+
+    return "Canvas erased.";
 }
