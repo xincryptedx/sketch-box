@@ -8,8 +8,22 @@ h1{
     text-align: center;
 }
 
+button{
+    height: 35px;
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .controls{
+    display: flex;
     padding-bottom: 20px;
+    align-items: center;
+}
+
+#canvasControls{
+    display: flex;
+    flex-direction: column;
 }
 
 .boxContainer{
