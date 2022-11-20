@@ -39,13 +39,14 @@ changeSizeBtn = document.querySelector("#changeSizeBtn");
 const defaultSize = 16;
 
 let isDrawing = true;   //Always start with drawing mode active
+let color = "black";    //Default drawing color is black
 
 //Called once to set up default div grid
 createDivGrid(defaultSize,defaultSize);
 
 //Events for control buttons
 drawEraseBtn.addEventListener("click", () =>{
-    console.log("DrawErase");
+    toggleDrawErase();
 })
 
 eraseAllBtn.addEventListener("click", () =>{
@@ -98,11 +99,17 @@ function randomNumber(upperRange){
 }
 
 function colorPixel(pixel){
-    pixel.style.backgroundColor = "black";
+    if(isDrawing) color = "black";
+    else if(!isDrawing) color = "white";
+
+    pixel.style.backgroundColor = color;
 }
 
 function toggleDrawErase(){
     isDrawing = !isDrawing;
 
-    
+    if(isDrawing){
+        drawEraseBtn.textContent = "Erase";
+    }
+    else drawEraseBtn.textContent = "Draw";
 }
