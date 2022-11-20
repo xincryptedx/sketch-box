@@ -49,11 +49,11 @@ function createDivGrid(sizeX,sizeY){
     const pixels = document.querySelectorAll(".pixel");
     pixels.forEach((pixel) => {
         pixel.addEventListener("mouseenter", function (e) {
-            if(e.buttons === 1) colorPixel(this);
+            if(e.buttons === 1) colorPixel(this);   //1 means primary button down(left click)
         })
         
         pixel.addEventListener("mousedown", function (e) {
-            e.preventDefault();
+            e.preventDefault();                     //stops grab/drag behavior for this element
             colorPixel(this);
         })
 
