@@ -1,7 +1,7 @@
 /* Pseudocode
 
 
-
+##Creating the Grid##
     createDivGrid(size params){
         if there is anything in the boxContainer delete it
 
@@ -13,18 +13,49 @@
             if hover enter and left click down, then changeColor
     }    
         
+####
 
+##Draw/Erase Button##
+    drawEraseToggle(){
+        change the current mode bool
 
+        change the drawEraseBtn text and color
+    }
+
+    *also need to change changeColor function to set color to white if isDrawing is false
+    *maybe make a const for erase color so background color could be changed later?
+
+####
 
 */
 
 //References, Variables, Constants
 boxContainer = document.querySelector(".boxContainer");
+drawEraseBtn = document.querySelector("#drawEraseBtn");
+eraseAllBtn = document.querySelector("#eraseAllBtn");
+changeSizeBtn = document.querySelector("#changeSizeBtn");
+
 
 const defaultSize = 16;
 
+let isDrawing = true;   //Always start with drawing mode active
+
 //Called once to set up default div grid
 createDivGrid(defaultSize,defaultSize);
+
+//Events for control buttons
+drawEraseBtn.addEventListener("click", () =>{
+    console.log("DrawErase");
+})
+
+eraseAllBtn.addEventListener("click", () =>{
+    console.log("EraseAll");
+})
+
+changeSizeBtn.addEventListener("click", () =>{
+    console.log("ChangeSize");
+})
+
 
 
 //Functions
@@ -68,4 +99,10 @@ function randomNumber(upperRange){
 
 function colorPixel(pixel){
     pixel.style.backgroundColor = "black";
+}
+
+function toggleDrawErase(){
+    isDrawing = !isDrawing;
+
+    
 }
