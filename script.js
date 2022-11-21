@@ -32,6 +32,7 @@
 //References, Variables, Constants
 boxContainer = document.querySelector(".boxContainer");
 
+colorSelect = document.querySelector("#mainColor")
 drawEraseBtn = document.querySelector("#drawEraseBtn");
 eraseAllBtn = document.querySelector("#eraseAllBtn");
 changeSizeBtn = document.querySelector("#changeSizeBtn");
@@ -42,12 +43,17 @@ widthInput = document.querySelector("#width");
 const defaultSize = 16;
 
 let isDrawing = true;   //Always start with drawing mode active
-let color = "black";    //Default drawing color is black
+let color = "#000000";    //Default drawing color is black
 
 //Called once to set up default div grid
 createDivGrid(defaultSize,defaultSize);
 
 //Events for control buttons
+colorSelect.addEventListener("change", () =>{
+    color = colorSelect.value;
+    console.log(colorSelect.value);
+})
+
 drawEraseBtn.addEventListener("click", () =>{
     toggleDrawErase();
 })
@@ -107,10 +113,11 @@ function randomNumber(upperRange){
 }
 
 function colorPixel(pixel){
-    if(isDrawing) color = "black";
-    else if(!isDrawing) color = "white";
+    let drawColor;
+    if(isDrawing) drawColor = color;
+    else if(!isDrawing) drawColor = "white";
 
-    pixel.style.backgroundColor = color;
+    pixel.style.backgroundColor = drawColor;
 }
 
 function toggleDrawErase(){
