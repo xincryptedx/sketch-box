@@ -136,13 +136,15 @@ function changeSize(){
 }
 
 function verifySizeInput(inputField){
-    if(isNaN(inputField.valueAsNumber)){
+    if(isNaN(+inputField.value)){
         inputField.value = defaultSize;
         return console.log("Incorrect input.");
     }
 
-    if(inputField.valueAsNumber <= 0) inputField.value = 1;
-    else if(inputField.valueAsNumber > 64) inputField.value = 64;
+    if(+inputField.value <= 0) inputField.value = 1;
+    else if(+inputField.value > 64) inputField.value = 64;
 
-    return console.log(inputField.valueAsNumber);
+    inputField.value = inputField.value.trim();
+
+    return console.log(+inputField.value);
 }
