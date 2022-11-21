@@ -31,9 +31,12 @@
 
 //References, Variables, Constants
 boxContainer = document.querySelector(".boxContainer");
+
 drawEraseBtn = document.querySelector("#drawEraseBtn");
 eraseAllBtn = document.querySelector("#eraseAllBtn");
 changeSizeBtn = document.querySelector("#changeSizeBtn");
+heightInput = document.querySelector("#height");
+widthInput = document.querySelector("#width");
 
 
 const defaultSize = 16;
@@ -54,10 +57,15 @@ eraseAllBtn.addEventListener("click", () =>{
 })
 
 changeSizeBtn.addEventListener("click", () =>{
-    console.log("ChangeSize");
+    changeSize();
 })
 
-
+heightInput.addEventListener("change", function () {
+    verifySizeInput(this);
+})
+widthInput.addEventListener("change", function () {
+    verifySizeInput(this);
+})
 
 //Functions
 function createDivGrid(sizeX,sizeY){
@@ -120,4 +128,21 @@ function eraseAll(){
     pixels.forEach((pixel) => {pixel.style.backgroundColor = "white"});
 
     return "Canvas erased.";
+}
+
+function changeSize(){
+    let sizeX = heightInput.valueAsNumber;
+    console.log(sizeX);
+}
+
+function verifySizeInput(inputField){
+    if(isNaN(inputField.valueAsNumber)){
+        inputField.value = defaultSize;
+        return console.log("Incorrect input.");
+    }
+
+    if(inputField.valueAsNumber <= 0) inputField.value = 1;
+    else if(inputField.valueAsNumber > 64) inputField.value = 64;
+
+    return console.log(inputField.valueAsNumber);
 }
