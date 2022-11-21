@@ -125,8 +125,13 @@ function toggleDrawErase(){
 
     if(isDrawing){
         drawEraseBtn.textContent = "Erase";
+        drawEraseBtn.classList.remove("erasing");
     }
-    else drawEraseBtn.textContent = "Draw";
+    else {
+        drawEraseBtn.textContent = "Draw";
+        drawEraseBtn.classList.add("erasing");
+    }
+
 }
 
 function eraseAll(){
