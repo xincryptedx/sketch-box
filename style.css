@@ -3,6 +3,10 @@
     color: white;
 }
 
+a{
+    color:greenyellow;
+}
+
 .content{
     display: flex;
     flex-direction: column;
