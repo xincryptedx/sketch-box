@@ -1,11 +1,27 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+}
+
 .content{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+body{
+    background-color: rgb(54, 64, 71);
+}
+
 h1{
     text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#mainColor{
+    height: 35px;
+    width: 35px;
 }
 
 button{
@@ -13,14 +29,17 @@ button{
     width: 100px;
     margin-left: 10px;
     margin-right: 10px;
+    color: black;
+}
+
+input{
+    color: black;
 }
 
 .erasing{
     background-color:darkgreen;
     color: white;
 }
-
-
 
 .controls{
     display: flex;
@@ -47,4 +66,5 @@ button{
 .pixel{
     height: 10px;
     width: 10px;
+    background-color: white;
 }

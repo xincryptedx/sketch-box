@@ -1,32 +1,6 @@
-/* Pseudocode
-
-
-##Creating the Grid##
-    createDivGrid(size params){
-        if there is anything in the boxContainer delete it
-
-        create the divs and append them to box container as children
-            for every sizeX create a div container that will be a "row" class
-            add to this sizeY children divs that are "pixel" class
-
-        add hover events to each one
-            if hover enter and left click down, then changeColor
-    }    
-        
-####
-
-##Draw/Erase Button##
-    drawEraseToggle(){
-        change the current mode bool
-
-        change the drawEraseBtn text and color
-    }
-
-    *also need to change changeColor function to set color to white if isDrawing is false
-    *maybe make a const for erase color so background color could be changed later?
-
-####
-
+/*Sketch Box - Web-based drawing pad.
+  Joshua Barnhart
+  Start Date 11/20/22
 */
 
 //References, Variables, Constants
