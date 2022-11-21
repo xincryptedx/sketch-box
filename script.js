@@ -131,8 +131,10 @@ function eraseAll(){
 }
 
 function changeSize(){
-    let sizeX = heightInput.valueAsNumber;
-    console.log(sizeX);
+    let sizeX = heightInput.value;
+    let sizeY = widthInput.value;
+
+    createDivGrid(sizeX, sizeY);
 }
 
 function verifySizeInput(inputField){
